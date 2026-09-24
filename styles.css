@@ -266,3 +266,17 @@ html::-webkit-scrollbar-thumb:hover{background:var(--scrollbar-thumb-hover)}
 @keyframes detector-arc{0%,100%{opacity:.25}38%{opacity:1}75%{opacity:.4}}
 .hero-stage.is-paused .detector-signal-dot,.hero-stage.is-paused .detector-signal-arc{animation-play-state:paused}
 @media(prefers-reduced-motion:reduce){.detector-signal-dot,.detector-signal-arc{animation:none;will-change:auto;opacity:1}}
+
+/* === AJUSTE: MOBILE === */
+@media(max-width:600px){
+  /* A arte usa auto 30rem, alinhada à direita: esta camada reproduz exatamente essa caixa. */
+  .detection-effects{display:block;inset:0 0 auto auto;width:calc(30rem * 1.776833);height:30rem;max-width:none;overflow:visible}
+  .detection-rings,.pipe-glimmer{display:none}
+  /* Coordenadas na arte 1672 x 941; o tamanho é medido na tela, não no viewBox. */
+  .detector-signal{--signal-x:1425px;--signal-y:368px;--signal-size:clamp(16px,5.3vw,26px);x:var(--signal-x);y:var(--signal-y);width:calc(var(--signal-size) * 1.960417);height:calc(var(--signal-size) * 1.960417)}
+  .highlights{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.25rem;align-items:start}
+  .highlights li{min-width:0;min-height:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:.35rem;flex:none;padding:0 .2rem!important;font-size:clamp(.6875rem,2.9vw,.8125rem);line-height:1.2;text-align:center}
+  .highlights li+li{border-left:1px solid #b9ddff55!important}
+  .highlights svg{width:1.5rem;height:1.5rem}
+  .services-cta{flex:none;align-self:stretch;width:100%;height:auto;min-height:3.5rem;padding:1rem 1.5rem;text-align:center}
+}

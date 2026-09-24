@@ -12,7 +12,7 @@ Site estático com banner, Serviços, Orçamento, Galeria, Regiões de atendimen
 
 ## Contato e conteúdo
 
-- Troque o telefone nos links `tel:` e `wa.me/` em `index.html` se o número mudar. A mensagem atual de WhatsApp é: `Olá! Vim através do site, preciso de atendimento.` Atualize os links fixos de WhatsApp e o número usado no envio do formulário em `script.js` juntos.
+- Para trocar o telefone, atualize em `index.html` os links de ligação `tel:+5548996081492` (hero “Ligar agora”, Orçamento “É urgente? Ligar agora” e número exibido no rodapé), bem como o texto visível do número no rodapé. Atualize também todos os links fixos `https://wa.me/5548996081492?text=...` no mesmo arquivo (cabeçalho, hero, Serviços, Regiões, FAQ e rodapé) e a URL `https://wa.me/5548996081492` montada pelo formulário em `script.js`. O formato `tel:` inclui `+` e código do país; o formato `wa.me/` usa apenas os dígitos. Preserve a mensagem de WhatsApp: `Olá! Vim através do site, preciso de atendimento.`
 - As seções `#servicos`, `#orcamento`, `#galeria`, `#regioes` e `#duvidas` estão implementadas. O rodapé fica após Dúvidas.
 - Ao adicionar fotos da galeria, coloque-as em `assets/images/`. Guarde eventuais prints de avaliações no mesmo diretório e inclua avaliações somente quando forem fornecidas e autorizadas.
 - Quando houver domínio definitivo, adicione a tag canonical ao `<head>` de `index.html`.
