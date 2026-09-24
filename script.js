@@ -327,13 +327,16 @@ if (bubblesLayer && quoteForBubbles) {
     bubblesLayer.replaceChildren(fragment);
   }
 
-  document.addEventListener('visibilitychange', () => {
+  // A pausa ocorre somente na aba oculta; ao retornar, o indicador retoma o pulso.
+  const syncVisibility = () => {
     bubblesLayer.classList.toggle('is-paused', document.hidden);
     document.querySelector('.hero-stage')?.classList.toggle('is-paused', document.hidden);
-  });
+    document.querySelector('.availability-dot')?.classList.toggle('is-paused', document.hidden);
+  };
+  document.addEventListener('visibilitychange', syncVisibility);
+  document.addEventListener('DOMContentLoaded', syncVisibility);
   window.addEventListener('resize', updateBubbles);
   reducedMotion.addEventListener('change', updateBubbles);
-  bubblesLayer.classList.toggle('is-paused', document.hidden);
-  document.querySelector('.hero-stage')?.classList.toggle('is-paused', document.hidden);
+  syncVisibility();
   updateBubbles();
 }

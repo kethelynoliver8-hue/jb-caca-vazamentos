@@ -22,7 +22,7 @@ html::-webkit-scrollbar-thumb:hover{background:var(--scrollbar-thumb-hover)}
 .detection-ring{transform-box:fill-box;transform-origin:center;opacity:0;animation:detection-pulse 4.8s ease-out infinite}
 .detection-ring-second{animation-delay:2.4s}
 .pipe-glimmer{opacity:0;stroke-dasharray:48 430;animation:pipe-trace 10s ease-in-out infinite;filter:drop-shadow(0 0 3px #41dfff)}
-.availability-dot{animation:availability-pulse 2.6s ease-in-out infinite}
+.availability-dot{flex:none;animation:availability-pulse 1.8s ease-in-out infinite}
 .header-cta,.button{transition:transform .22s ease,box-shadow .22s ease,background-color .22s ease}
 .header-cta:hover,.header-cta:focus-visible{transform:translateY(-2px);box-shadow:0 0 1.25rem #fb142388,0 .45rem 1rem #0004}
 .button:hover,.button:focus-visible{transform:translateY(-2px)}
@@ -32,12 +32,17 @@ html::-webkit-scrollbar-thumb:hover{background:var(--scrollbar-thumb-hover)}
 .header-cta::after,.button-call::after{content:"";position:absolute;z-index:-1;inset:-40% auto -40% -50%;width:24%;transform:skewX(-22deg);background:linear-gradient(90deg,transparent,#fff5,transparent);animation:button-sheen 9s ease-in-out infinite;pointer-events:none}
 .highlights svg{transition:filter .25s ease,stroke .25s ease}
 .highlights li:hover svg{stroke:#b6faff;filter:drop-shadow(0 0 .55rem #3be4ff)}
-@keyframes availability-pulse{0%,100%{box-shadow:0 0 .55rem #27e7f588;filter:brightness(1)}50%{box-shadow:0 0 1rem #27e7f5bb,0 0 1.5rem #27e7f555;filter:brightness(1.16)}}
+@keyframes availability-pulse{0%,100%{opacity:1;box-shadow:0 0 0 0 #27e7f555,0 0 .55rem #27e7f5aa}50%{opacity:.35;box-shadow:0 0 0 8px #27e7f500,0 0 1rem #27e7f5bb}}
+@keyframes availability-fade{0%,100%{opacity:1}50%{opacity:.35}}
+.availability-dot.is-paused{animation-play-state:paused}
 @keyframes detection-pulse{0%{opacity:0;transform:scale(.7)}10%{opacity:.42}70%,100%{opacity:0;transform:scale(3)}}
 @keyframes pipe-trace{0%,58%,100%{opacity:0;stroke-dashoffset:0}62%{opacity:.55}84%{opacity:.55;stroke-dashoffset:-200}90%{opacity:0;stroke-dashoffset:-235}}
 @keyframes button-sheen{0%,76%{left:-50%;opacity:0}79%{opacity:.6}88%{left:135%;opacity:.35}90%,100%{left:135%;opacity:0}}
 @media(max-width:760px){.detection-effects{display:none}}
-@media(prefers-reduced-motion:reduce){.availability-dot,.detection-ring,.pipe-glimmer,.header-cta::after,.button-call::after{animation:none}.detection-ring,.pipe-glimmer{opacity:0}.header-cta,.button,.highlights svg{transition:none}.header-cta:hover,.header-cta:focus-visible,.button:hover,.button:focus-visible{transform:none}}
+@media(prefers-reduced-motion:reduce){.availability-dot{animation:availability-fade 3s ease-in-out infinite}.detection-ring,.pipe-glimmer,.header-cta::after,.button-call::after{animation:none}.detection-ring,.pipe-glimmer{opacity:0}.header-cta,.button,.highlights svg{transition:none}.header-cta:hover,.header-cta:focus-visible,.button:hover,.button:focus-visible{transform:none}}
+
+/* Links de ligação ficam acima das camadas decorativas, sem alterar a aparência. */
+.hero-actions .button-call,.quote-call,.footer-phone{position:relative;z-index:3}
 
 /* A cena do hero termina na mesma cor que inicia Serviços. */
 .hero-stage::after{content:"";position:absolute;inset:auto 0 0;height:clamp(5rem,12vw,10rem);background:linear-gradient(to bottom,transparent,var(--navy-dark));pointer-events:none;z-index:0}
