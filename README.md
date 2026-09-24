@@ -12,8 +12,8 @@ Site estático com banner, Serviços, Orçamento, Galeria, Regiões de atendimen
 
 ## Contato e conteúdo
 
-- Para trocar o telefone, atualize em `index.html` os links de ligação `tel:+5548996081492` (cabeçalho “Atendimento 24h”, hero “Ligar agora”, Orçamento “É urgente? Ligar agora” e número exibido no rodapé), bem como o texto visível do número no rodapé. Atualize também todos os links fixos `https://wa.me/5548996081492?text=...` no mesmo arquivo (hero, Serviços, Regiões, FAQ e rodapé) e a URL `https://wa.me/5548996081492` montada pelo formulário em `script.js`. O formato `tel:` inclui `+` e código do país; o formato `wa.me/` usa apenas os dígitos. Preserve a mensagem de WhatsApp: `Olá! Vim através do site, preciso de atendimento.`
-- Para evitar cache antigo no GitHub Pages, aumente o número em `styles.css?v=2` e `script.js?v=2` no `<head>` de `index.html` a cada publicação.
+- Para trocar o telefone, atualize em `index.html` todos os links fixos `https://wa.me/5548996081492?text=...`: cabeçalho “Atendimento 24h”, hero “Ligar agora” e “Chamar no WhatsApp”, Orçamento “É urgente? Ligar agora”, Serviços, Regiões, FAQ e rodapé. Os botões “Ligar agora” usam exatamente o mesmo link do botão “Chamar no WhatsApp”, inclusive a mensagem: `Olá! Vim através do site, preciso de atendimento.` Atualize também a URL `https://wa.me/5548996081492` montada pelo formulário em `script.js`. O número exibido no rodapé permanece como `tel:+5548996081492`; atualize o link e o texto visível se o telefone mudar. O formato `tel:` inclui `+` e código do país; o formato `wa.me/` usa apenas os dígitos.
+- Para evitar cache antigo no GitHub Pages, aumente o número em `styles.css?v=3` e `script.js?v=3` no `<head>` de `index.html` a cada publicação.
 - As seções `#servicos`, `#orcamento`, `#galeria`, `#regioes` e `#duvidas` estão implementadas. O rodapé fica após Dúvidas.
 - Ao adicionar fotos da galeria, coloque-as em `assets/images/`. Guarde eventuais prints de avaliações no mesmo diretório e inclua avaliações somente quando forem fornecidas e autorizadas.
 - Quando houver domínio definitivo, adicione a tag canonical ao `<head>` de `index.html`.
